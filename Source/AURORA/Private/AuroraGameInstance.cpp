@@ -17,8 +17,8 @@ void UAuroraGameInstance::Init()
 	if (FModuleManager::Get().IsModuleLoaded("WebSockets"))
 	{
 		// Dirección del servidor WebSocket (ajusta según tu IP y puerto)
-		//WebSocket = FWebSocketsModule::Get().CreateWebSocket("ws://192.168.100.85:8080");
-		WebSocket = FWebSocketsModule::Get().CreateWebSocket("ws://localhost:8080");
+		WebSocket = FWebSocketsModule::Get().CreateWebSocket("ws://192.168.100.85:8080/");
+		//WebSocket = FWebSocketsModule::Get().CreateWebSocket("ws://localhost:8080/");
 
 		WebSocket->OnConnected().AddLambda([]()
 		{
@@ -66,6 +66,7 @@ void UAuroraGameInstance::Init()
 				);
 
 				// Emitir evento para Blueprints
+				UE_LOG(LogTemp, Warning, TEXT("Broadcasting to Blueprint"));
 				OnVectorsReceived.Broadcast(Accel, RotationRate, Touch);
 			}
 		});
