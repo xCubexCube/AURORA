@@ -30,27 +30,7 @@
 			"Enabled": false
 		},
 		{
-			"Name": "Bridge",
-			"Enabled": false
-		},
-		{
 			"Name": "MetaHuman",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Linux"
-			]
-		},
-		{
-			"Name": "MetaHumanLiveLink",
-			"Enabled": true
-		},
-		{
-			"Name": "MetaHumanCharacter",
-			"Enabled": true
-		},
-		{
-			"Name": "MetaHumanCoreTech",
 			"Enabled": true,
 			"SupportedTargetPlatforms": [
 				"Win64",
@@ -64,6 +44,22 @@
 				"Win64",
 				"Linux"
 			]
+		},
+		{
+			"Name": "MetaHumanCoreTech",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Linux"
+			]
+		},
+		{
+			"Name": "MetaHumanCharacter",
+			"Enabled": true
+		},
+		{
+			"Name": "MetaHumanLiveLink",
+			"Enabled": true
 		}
 	]
 }
