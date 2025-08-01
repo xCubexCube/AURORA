@@ -22,18 +22,18 @@ void UAuroraGameInstance::Init()
 
 		WebSocket->OnConnected().AddLambda([]()
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, TEXT("WebSocket conectado correctamente"));
+			//GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, TEXT("WebSocket conectado correctamente"));
 		});
 
 		WebSocket->OnConnectionError().AddLambda([](const FString& Error)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, FString::Printf(TEXT("Error de conexión: %s"), *Error));
+			//GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, FString::Printf(TEXT("Error de conexión: %s"), *Error));
 		});
 
 		WebSocket->OnClosed().AddLambda([](int32 StatusCode, const FString& Reason, bool bWasClean)
 		{
 			const FColor Color = bWasClean ? FColor::Green : FColor::Red;
-			GEngine->AddOnScreenDebugMessage(-1, 10.0f, Color, FString::Printf(TEXT("Conexión cerrada: %s"), *Reason));
+			//GEngine->AddOnScreenDebugMessage(-1, 10.0f, Color, FString::Printf(TEXT("Conexión cerrada: %s"), *Reason));
 		});
 
 		WebSocket->OnMessage().AddLambda([this](const FString& MessageString)
@@ -74,7 +74,7 @@ void UAuroraGameInstance::Init()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("No se pudo cargar el módulo WebSockets"));
+	//	UE_LOG(LogTemp, Error, TEXT("No se pudo cargar el módulo WebSockets"));
 	}
 }
 
